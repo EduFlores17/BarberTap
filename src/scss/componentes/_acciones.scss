@@ -15,5 +15,9 @@
         margin-bottom: calc(v.$separacion/2);
         color: v.$blanco;
         text-align: center;
+        transition: color .6s;
+    } 
+    a:hover{
+        color: v.$azul;
     }
 }
