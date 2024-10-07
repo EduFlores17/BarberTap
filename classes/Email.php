@@ -23,14 +23,16 @@ class Email{
         //crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '37324c5588d0e1';
-        $mail->Password = 'e754b0ad25637b';
+        $mail->Username = 'linemx.tap@gmail.com';
+        $mail->Password = 'mlzexcqdioqhzesx';
+        $mail->SMTPSecure ='tls';
+        $mail->Port = 587;
 
-        $mail->setFrom('cuentas@barbertap.com');
-        $mail->addAddress('cuentas@barbertap.com');
+        //configurar el contenido del email
+        $mail->setFrom('linemx.tap@gmail.com', 'Admin LineMx');
+        $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Confirma tu cuenta'; 
 
         //setHTML
@@ -55,14 +57,18 @@ class Email{
         //crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        //configurar stp el protocolo de emails
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '37324c5588d0e1';
-        $mail->Password = 'e754b0ad25637b';
+        $mail->Username = 'linemx.tap@gmail.com';
+        $mail->Password = 'mlzexcqdioqhzesx';
+        $mail->SMTPSecure ='tls';
+        $mail->Port = 587;
 
-        $mail->setFrom('cuentas@barbertap.com');
-        $mail->addAddress('cuentas@barbertap.com');
+        //configurar el contenido del email
+        $mail->setFrom('linemx.tap@gmail.com', 'Admin LineMx');
+        $mail->addAddress($this->email, 'nose');
         $mail->Subject = 'Reestablece tu contraseña'; 
 
         //setHTML
