@@ -19,8 +19,17 @@
             color: v.$blanco;
         }
 
-        &:hover{
-            background-color: v.$azul;
-        }
+    }
+}
+
+.servicios{
+    @extend .citas;
+
+    .acciones{
+        margin: 0;
+    }
+    .boton,
+    .boton-eliminar{
+        margin: 0;
     }
 }

@@ -23,12 +23,13 @@ class Email{
         //crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'linemx.tap@gmail.com';
-        $mail->Password = 'mlzexcqdioqhzesx';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure ='tls';
-        $mail->Port = 587;
+        
 
         //configurar el contenido del email
         $mail->setFrom('linemx.tap@gmail.com', 'Admin LineMx');
@@ -42,7 +43,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong> Hola ". $this->nombre .  " " . $this->apellido. "</strong> Has creado a tu cuenta en BarberTap,
         solo deberás confirmarla presionando el siguiente enlace</p>";
-        $contenido .= "<p> Presiona aquí  <a href='http://localhost:3000/confirmar-cuenta?token=" 
+        $contenido .= "<p> Presiona aquí  <a href='". $_ENV['APP_URL'] ."/confirmar-cuenta?token=" 
         . $this->token . "'>Confirmar cuenta</a></p>";
         $contenido .= "<p> Si tu no solicitaste este cuenta, puedes ignorar el mensaje </p>";
         $contenido .= "<html></html>";
@@ -57,14 +58,12 @@ class Email{
         //crear el objeto de email
         $mail = new PHPMailer();
         $mail->isSMTP();
-        //configurar stp el protocolo de emails
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'linemx.tap@gmail.com';
-        $mail->Password = 'mlzexcqdioqhzesx';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure ='tls';
-        $mail->Port = 587;
 
         //configurar el contenido del email
         $mail->setFrom('linemx.tap@gmail.com', 'Admin LineMx');
@@ -78,7 +77,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong> Hola ". $this->nombre .  " " . $this->apellido. "</strong> Has solicitado reestablecer
         tu contraseña a tu cuenta en BarberTap, solo debes presionar el siguiente enlace para hacerlo</p>";
-        $contenido .= "<p> Presiona aquí  <a href='http://localhost:3000/recuperar?token=" 
+        $contenido .= "<p> Presiona aquí  <a href='". $_ENV['APP_URL'] ."/recuperar?token=" 
         . $this->token . "'>Reestablecer contraseña</a></p>";
         $contenido .= "<p> Si tu no solicitaste este cuenta, puedes ignorar el mensaje </p>";
         $contenido .= "<html></html>";

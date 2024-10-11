@@ -6,7 +6,7 @@
     <title>BarberTap</title>
     <link rel="shortcut icon" href="../build/img/bt_ico.webp">
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="/build/css/app.css">
 </head>
 <body>
 
